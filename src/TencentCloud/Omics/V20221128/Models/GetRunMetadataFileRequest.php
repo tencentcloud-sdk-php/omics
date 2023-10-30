@@ -18,18 +18,36 @@ namespace TencentCloud\Omics\V20221128\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * GetRunCalls请求参数结构体
+ * GetRunMetadataFile请求参数结构体
  *
  * @method string getRunUuid() 获取任务Uuid。
  * @method void setRunUuid(string $RunUuid) 设置任务Uuid。
- * @method string getPath() 获取作业路径
- * @method void setPath(string $Path) 设置作业路径
+ * @method string getKey() 获取需要获取的文件名。
+
+默认支持以下文件：
+- nextflow.log
+
+提交时NFOption中report指定为true时，额外支持以下文件：
+- execution_report.html
+- execution_timeline.html
+- execution_trace.txt
+- pipeline_dag.html
+ * @method void setKey(string $Key) 设置需要获取的文件名。
+
+默认支持以下文件：
+- nextflow.log
+
+提交时NFOption中report指定为true时，额外支持以下文件：
+- execution_report.html
+- execution_timeline.html
+- execution_trace.txt
+- pipeline_dag.html
  * @method string getProjectId() 获取项目ID。
 （不填使用指定地域下的默认项目）
  * @method void setProjectId(string $ProjectId) 设置项目ID。
 （不填使用指定地域下的默认项目）
  */
-class GetRunCallsRequest extends AbstractModel
+class GetRunMetadataFileRequest extends AbstractModel
 {
     /**
      * @var string 任务Uuid。
@@ -37,9 +55,18 @@ class GetRunCallsRequest extends AbstractModel
     public $RunUuid;
 
     /**
-     * @var string 作业路径
+     * @var string 需要获取的文件名。
+
+默认支持以下文件：
+- nextflow.log
+
+提交时NFOption中report指定为true时，额外支持以下文件：
+- execution_report.html
+- execution_timeline.html
+- execution_trace.txt
+- pipeline_dag.html
      */
-    public $Path;
+    public $Key;
 
     /**
      * @var string 项目ID。
@@ -49,7 +76,16 @@ class GetRunCallsRequest extends AbstractModel
 
     /**
      * @param string $RunUuid 任务Uuid。
-     * @param string $Path 作业路径
+     * @param string $Key 需要获取的文件名。
+
+默认支持以下文件：
+- nextflow.log
+
+提交时NFOption中report指定为true时，额外支持以下文件：
+- execution_report.html
+- execution_timeline.html
+- execution_trace.txt
+- pipeline_dag.html
      * @param string $ProjectId 项目ID。
 （不填使用指定地域下的默认项目）
      */
@@ -70,8 +106,8 @@ class GetRunCallsRequest extends AbstractModel
             $this->RunUuid = $param["RunUuid"];
         }
 
-        if (array_key_exists("Path",$param) and $param["Path"] !== null) {
-            $this->Path = $param["Path"];
+        if (array_key_exists("Key",$param) and $param["Key"] !== null) {
+            $this->Key = $param["Key"];
         }
 
         if (array_key_exists("ProjectId",$param) and $param["ProjectId"] !== null) {

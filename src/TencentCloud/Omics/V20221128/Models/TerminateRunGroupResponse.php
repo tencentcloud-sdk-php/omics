@@ -18,32 +18,20 @@ namespace TencentCloud\Omics\V20221128\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * GetRunStatus请求参数结构体
+ * TerminateRunGroup返回参数结构体
  *
- * @method string getRunUuid() 获取任务Uuid。
- * @method void setRunUuid(string $RunUuid) 设置任务Uuid。
- * @method string getProjectId() 获取项目ID。
-（不填使用指定地域下的默认项目）
- * @method void setProjectId(string $ProjectId) 设置项目ID。
-（不填使用指定地域下的默认项目）
+ * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+ * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class GetRunStatusRequest extends AbstractModel
+class TerminateRunGroupResponse extends AbstractModel
 {
     /**
-     * @var string 任务Uuid。
+     * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
-    public $RunUuid;
+    public $RequestId;
 
     /**
-     * @var string 项目ID。
-（不填使用指定地域下的默认项目）
-     */
-    public $ProjectId;
-
-    /**
-     * @param string $RunUuid 任务Uuid。
-     * @param string $ProjectId 项目ID。
-（不填使用指定地域下的默认项目）
+     * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
     {
@@ -58,12 +46,8 @@ class GetRunStatusRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("RunUuid",$param) and $param["RunUuid"] !== null) {
-            $this->RunUuid = $param["RunUuid"];
-        }
-
-        if (array_key_exists("ProjectId",$param) and $param["ProjectId"] !== null) {
-            $this->ProjectId = $param["ProjectId"];
+        if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
+            $this->RequestId = $param["RequestId"];
         }
     }
 }

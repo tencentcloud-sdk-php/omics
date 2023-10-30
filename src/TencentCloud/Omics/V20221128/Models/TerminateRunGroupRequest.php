@@ -18,28 +18,21 @@ namespace TencentCloud\Omics\V20221128\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * GetRunCalls请求参数结构体
+ * TerminateRunGroup请求参数结构体
  *
- * @method string getRunUuid() 获取任务Uuid。
- * @method void setRunUuid(string $RunUuid) 设置任务Uuid。
- * @method string getPath() 获取作业路径
- * @method void setPath(string $Path) 设置作业路径
+ * @method string getRunGroupId() 获取任务批次ID。
+ * @method void setRunGroupId(string $RunGroupId) 设置任务批次ID。
  * @method string getProjectId() 获取项目ID。
 （不填使用指定地域下的默认项目）
  * @method void setProjectId(string $ProjectId) 设置项目ID。
 （不填使用指定地域下的默认项目）
  */
-class GetRunCallsRequest extends AbstractModel
+class TerminateRunGroupRequest extends AbstractModel
 {
     /**
-     * @var string 任务Uuid。
+     * @var string 任务批次ID。
      */
-    public $RunUuid;
-
-    /**
-     * @var string 作业路径
-     */
-    public $Path;
+    public $RunGroupId;
 
     /**
      * @var string 项目ID。
@@ -48,8 +41,7 @@ class GetRunCallsRequest extends AbstractModel
     public $ProjectId;
 
     /**
-     * @param string $RunUuid 任务Uuid。
-     * @param string $Path 作业路径
+     * @param string $RunGroupId 任务批次ID。
      * @param string $ProjectId 项目ID。
 （不填使用指定地域下的默认项目）
      */
@@ -66,12 +58,8 @@ class GetRunCallsRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("RunUuid",$param) and $param["RunUuid"] !== null) {
-            $this->RunUuid = $param["RunUuid"];
-        }
-
-        if (array_key_exists("Path",$param) and $param["Path"] !== null) {
-            $this->Path = $param["Path"];
+        if (array_key_exists("RunGroupId",$param) and $param["RunGroupId"] !== null) {
+            $this->RunGroupId = $param["RunGroupId"];
         }
 
         if (array_key_exists("ProjectId",$param) and $param["ProjectId"] !== null) {
